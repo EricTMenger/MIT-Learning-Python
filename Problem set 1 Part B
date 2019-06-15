@@ -1,0 +1,43 @@
+
+"""
+Created on Fri Jun 14 15:54:28 2019
+
+@author: Eric Menger
+"""
+
+
+current_savings = 0.0
+months = 0
+r = .04
+
+annual_salary = input("Starting annual salary: ")
+annual_salary = float(annual_salary)
+portion_saved = input("Portion of salary to be saved: ")
+portion_saved = float(portion_saved)
+total_cost = input("Total cost of home: ")
+total_cost = float(total_cost)
+semi_annual = input("Semi annual raise: ")
+semi_annual = float(semi_annual)
+
+portion_down_payment = .25 *total_cost
+monthly_salary = annual_salary/12
+monthly_salary_saved = monthly_salary*portion_saved
+
+while current_savings < portion_down_payment:    
+    months = months + 1
+    
+    if(months%6 == 0):
+        monthly_salary_saved = monthly_salary_saved*semi_annual + monthly_salary_saved        
+    current_savings = monthly_salary_saved + current_savings*(r/12) + current_savings
+    
+    
+print(months)
+    
+
+    
+
+
+
+
+
+
